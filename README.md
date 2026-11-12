@@ -5,16 +5,14 @@
 ## 下载
 
 推荐从「发行版」页下载（有版本号和直接下载按钮）：
-<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
+<https://github.com/seancao77/seanmorning/releases>
 
 | 版本 | 直接下载 | 适合谁 |
 |---|---|---|
-| 普通版 | [SeanMorning_android_0.6.8.apk](https://gitee.com/magnificent-masterpiece/seanmorning/releases/download/v0.6.8/SeanMorning_android_0.6.8.apk) | 想用自己的 AI 账号的朋友 |
-| 家庭版 | [SeanMorning_family_android_0.6.8.apk](https://gitee.com/magnificent-masterpiece/seanmorning/releases/download/v0.6.8/SeanMorning_family_android_0.6.8.apk) | 家人 / 亲友（已预配好） |
+| 普通版 | [SeanMorning_android_0.6.8.apk](https://github.com/seancao77/seanmorning/releases/download/v0.6.8/SeanMorning_android_0.6.8.apk) | 想用自己的 AI 账号的朋友 |
+| 家庭版 | [SeanMorning_family_android_0.6.8.apk](https://github.com/seancao77/seanmorning/releases/download/v0.6.8/SeanMorning_family_android_0.6.8.apk) | 家人 / 亲友（已预配好） |
 
-> 每个 APK 都有同名的 `.sha256` 文件（在仓库文件列表里），用于校验下载是否完整（可选）。
-
-> **下载提示**：如果下载下来的 APK 文件名带了 `.zip` 后缀（例如 `xxx.apk.zip`），把 `.zip` 去掉、重命名回 `.apk` 再安装即可——文件内容没变，只是 gitee 误判了文件类型。
+> 国内用户也可以到 gitee 镜像仓库下载：<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
 ## 两个版本的区别
 
