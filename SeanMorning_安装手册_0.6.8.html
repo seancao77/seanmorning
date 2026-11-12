@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sean Morning 安装手册 v0.6.8</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+       max-width: 720px; margin: 0 auto; padding: 18px; line-height: 1.7; color: #2b2b2b; }
+h1 { font-size: 1.7em; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+h2 { font-size: 1.35em; margin-top: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #f5f5f5; }
+code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+blockquote { border-left: 4px solid #ddd; margin: 12px 0; padding: 4px 12px; color: #666; background: #fafafa; }
+a { color: #c98aab; }
+hr { border: none; border-top: 1px solid #eee; margin: 1.4em 0; }
+li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<h1>Sean Morning 安装手册</h1>
+<blockquote>
+<p>版本 <strong>v0.6.8</strong> · 更新于 2026-11-10
+适用于 Android 8.0 及以上、64 位（arm64）的手机。实际测试机型：三星 S25 Ultra（国行，Android 16）。
+每次发布新版本都会同步更新这份手册；App 里的使用说明在 ☰ → ❓ 帮助。</p>
+</blockquote>
+<p>Sean Morning 是你自己的个人 AI 伙伴，<strong>全部运行在你的手机上</strong>：</p>
+<ul>
+<li>不需要电脑，也不需要服务器；</li>
+<li>你的数据（聊天、记忆、人格设定、API Key）都保存在手机上的加密保险箱里。</li>
+</ul>
+<hr />
+<h2>1. 准备</h2>
+<table>
+<thead>
+<tr>
+<th>需要</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安装包</td>
+<td><code>SeanMorning_android_&lt;版本&gt;.apk</code>（大约 25 MB），旁边的 <code>.sha256</code> 文件用来校验</td>
+</tr>
+<tr>
+<td>阿里百炼账号</td>
+<td>聊天、语音识别、自然的云端声音、上网搜索都用它，<strong>一个 API Key 就够</strong>。新账号有免费额度，用完后按量付费，日常聊天每月大约几块到几十块钱</td>
+</tr>
+<tr>
+<td>网络</td>
+<td>手机能上网就行（Wi-Fi 或流量）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 安装 App</h2>
+<ol>
+<li>把 APK 传到手机上，用微信“文件传输助手”、USB 数据线或网盘都可以。</li>
+<li>在手机上点开 APK。如果提示“禁止安装未知应用”，按提示允许这一次（比如允许“我的文件”或“微信”安装应用）。</li>
+<li>点 <strong>安装</strong>，完成后点 <strong>打开</strong>。</li>
+<li>（可选）校验安装包：<code>.sha256</code> 文件里的那串值，应该和电脑上 <code>certutil -hashfile 文件名 SHA256</code> 算出来的一样。</li>
+</ol>
+<p><strong>升级</strong>：新版本直接覆盖安装就行，聊天记录、人格设定、API Key 都会保留。前提是安装包用的是同一个签名，正式发布的安装包都是同一个签名。</p>
+<p><strong>不要先卸载再装</strong>：卸载会把手机上的保险箱一起删掉。</p>
+<hr />
+<h2>3. 第一次打开</h2>
+<ol>
+<li>第一次点「语音」或「对话」时，会问你要<strong>麦克风</strong>权限，选“允许”。</li>
+<li>第一次用「对话」模式时，会问你要<strong>通知</strong>权限，选“允许”。锁屏后还能继续通话，靠的就是这个通知。</li>
+<li>让每天的早报能按时准备好：手机设置 → 应用 → Sean Morning → 电池 → 选 <strong>不受限制</strong>。</li>
+</ol>
+<hr />
+<h2>4. 填阿里百炼 API Key（必做）</h2>
+<ol>
+<li><strong>在手机上</strong>打开 <a href="https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key">https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key</a>，用支付宝或阿里云账号登录，按提示开通百炼。</li>
+<li>点 <strong>创建 API Key</strong>，然后马上点复制。<strong>这个 Key 只显示一次</strong>，所以直接在手机上创建、复制，不用经过电脑。</li>
+<li>回到 Sean Morning，打开 ☰ → 🧠 <strong>AI 模型</strong>。</li>
+<li>在「对话层（快）」那一块：
+   - 服务商选 <strong>阿里百炼</strong>；
+   - 模型填 <code>qwen3.7-plus</code>（更聪明），或者 <code>qwen3.8-flash</code>（更快、更便宜）；
+   - 额外参数填 <code>{"enable_thinking":false}</code>；
+   - 把 Key 粘贴到 API Key 一栏，点 <strong>保存</strong>，再点 <strong>测试</strong>。看到 ✓ 和首字延迟，就说明好了。</li>
+<li>「执行层（强）」照样设置：模型填 <code>qwen3.7-plus</code>（或 <code>qwen3.8-max</code>），Key 已经存过，不用再填。</li>
+<li>余额用完时她会告诉你“余额不足”，到百炼控制台充值就行。</li>
+</ol>
+<p>Key 只保存在手机的加密保险箱里，页面上看不到，也不会发到别的地方。</p>
+<hr />
+<h2>5. 声音、人格和背景</h2>
+<ul>
+<li>☰ → 🎙️ <strong>声音</strong>：引擎选“云端声音”，挑一个你喜欢的，比如 <strong>龙应桃（温柔淡定）</strong>、龙悦（温暖磁性）。可以设每月上限（默认 ¥20），用到 80% 会提醒你。「她的音量」默认 90%，可以在这里调。不想花钱就选“手机自带声音”。</li>
+<li>☰ → 🎭 <strong>人格设置</strong>：给她起名字，选对话模式，调性格滑块；可以点“填入 Morning V1.0 模板”再按自己的喜好改。<strong>建议把人格设定的文字另外保存一份</strong>，换手机时可以直接粘贴回来。</li>
+<li>☰ → 🎨 <strong>背景</strong>：选颜色和形状，或在最上面的「自己的背景」里点「＋ 添加照片/视频」，从手机里选一张照片或一段 MP4 视频（最大 120 MB）。加过的都会保存，点一下就换，点「默认」随时换回颜色和小球，只有点 🗑 才删除。照片或视频会铺满整个屏幕，底部自动变暗方便看字；视频会静音循环播放，可以调背景亮度。</li>
+<li>☰ → 🎨 <strong>数字人形象</strong>（0.6.2）：在「自己的背景」里点 <strong>Morning Modern 都市知性</strong> 或 <strong>Morning Oriental 古风雅致</strong>。她待机、听你说话（包括想回答时）、说话时会自动换成对应的视频，静音循环，选择会一直保留。人像在上方，聊天文字从她下巴以下开始，不会挡住文字和按钮。目前是测试视频，只跟着状态切换，不是实时口型同步。点「默认」随时换回小球。</li>
+</ul>
+<hr />
+<h2>6. 连接与早报</h2>
+<p>打开 ☰ → 🔗 <strong>连接与早报</strong>。最上面是 <strong>每日早报</strong>，下面每个连接一条横条：点横条展开设置，点右边的「已连接 / 未连接」开关这一项。改动会自动保存，也可以点<strong>顶上的「保存」</strong>一次全部保存。</p>
+<table>
+<thead>
+<tr>
+<th>连接</th>
+<th>怎么设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌅 每日早报</td>
+<td>设一个准备时间（默认 06:45），可以填几个关注的话题。说“早报”就念给你听</td>
+</tr>
+<tr>
+<td>☀️ 天气</td>
+<td>只填城市名，比如 <code>杭州</code>，经纬度会自动查出来</td>
+</tr>
+<tr>
+<td>📰 新闻</td>
+<td>点推荐的新闻源一键添加（中国新闻网、IT之家等），每个源会显示 ✓ 或 ✗</td>
+</tr>
+<tr>
+<td>📅 手机日历</td>
+<td>点「未连接」打开，允许访问日历（加日程也需要它）。直接读三星日历里的日程，不用注册任何东西。说“明天早上八点到下午五点培训班，加到日历”会弹出确认卡片，卡片上能直接改名称和时间，点「确认」才加。刚加的日程还能说“改成8点到5点”“删掉这个安排”。想看 Outlook 日程：在三星日历 → 设置 → 管理日历 → 添加账户里，添加你的 Outlook 账户</td>
+</tr>
+<tr>
+<td>⏰ 闹钟与提醒</td>
+<td>默认已打开，不需要权限，用手机的时钟 App。说“明早六点半叫我”“10 分钟后提醒我关火”，刚设完还能说“改成七点半”“推迟半小时”“取消闹钟”。一天以后的提醒会放进手机日历</td>
+</tr>
+<tr>
+<td>🎵 音乐</td>
+<td>点“允许读取”，她就能放你手机里的歌；点“去允许”打开通知使用权，她就能试着让 QQ音乐 直接播放，并显示和控制正在放的歌（不会读你的通知）。QQ音乐 下载的歌是加密格式，只能在 QQ音乐 里放</td>
+</tr>
+<tr>
+<td>🔎 上网搜索</td>
+<td>用上面那个百炼 Key，打开就能用。说“帮我查一下……”</td>
+</tr>
+<tr>
+<td>📧 Outlook 日历与邮件</td>
+<td>可选，需要一个免费的微软应用 ID（Client ID）。<strong>它不是你的邮箱</strong>，是一串 36 位带横线的代码。卡片里有一步步的说明，详细步骤见 <a href="OUTLOOK.md">OUTLOOK.md</a>。个人账户从 2024 年起要先注册免费 Azure 账户才能注册应用。设置好后点“登录 Outlook”，按页面上的代码完成授权（只想看 Outlook 日程的话，用上面的「手机日历」更简单）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分享给 Sean</strong>：在微信、头条、浏览器、相册里点「分享」，选 <strong>发给 Sean Morning</strong>，文章、链接、图片就会发给她，一点就能让她总结或判断真假。第一次分享时，可能要在分享菜单的“更多”里找到 Sean Morning。</p>
+<hr />
+<h2>7. 换手机和备份</h2>
+<ul>
+<li>目前<strong>还没有一键导出保险箱</strong>的功能（在计划中）。换手机时，在新手机上装好 App，然后重新做第 4 到 6 步。人格设定的文字，可以粘贴之前另存的那份。</li>
+<li>保险箱的密钥由手机硬件（Android Keystore）保护，不能复制到别的手机，所以旧手机的数据没法直接搬过去。这是为了安全。</li>
+</ul>
+<hr />
+<h2>8. 遇到问题</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提示“没有麦克风权限”</td>
+<td>点提示里的按钮去打开权限，或者 手机设置 → 应用 → Sean Morning → 权限 → 麦克风</td>
+</tr>
+<tr>
+<td>听写没反应、提示余额不足</td>
+<td>去百炼控制台充值；提示“需要 Key”就回到第 4 步</td>
+</tr>
+<tr>
+<td>放歌只打开了 QQ音乐，或者没声音</td>
+<td>这是 QQ音乐 不让别的 App 点歌造成的。她会改放你手机里的歌或电台；也可以在 连接 → 音乐 里允许通知使用权再试</td>
+</tr>
+<tr>
+<td>播放条自己出现、关不掉</td>
+<td>点 ✕：从 0.4.5 起点了一定会关，关掉的歌不会再弹出来。不想要音乐功能，就在 连接与早报 里把「音乐」关掉，播放条就不会再出现</td>
+</tr>
+<tr>
+<td>放歌没声音、她的声音太小</td>
+<td>按手机侧边的音量加键：在 App 里调的是媒体音量，她的声音和音乐一起变。也可以在 ☰ → 🎙️ 声音 里调「她的音量」（默认 90%），那里还能看到手机媒体音量</td>
+</tr>
+<tr>
+<td>说话漏字、或者她回答得慢</td>
+<td>0.5.2 起点「语音」后马上开始录、结束时会等最后几个字；「对话」模式下句子说完 0.7 秒就回答，没说完会多等一会儿。觉得她太急或太慢，到 ☰ → 🎙️ 声音 → 对话 里调“说完一句后多久回答你”</td>
+</tr>
+<tr>
+<td>「对话」时她把自己的话当成你的</td>
+<td>0.5.4 起外放时会自动去掉她自己的回声，你直接开口就能打断她，不用动手。如果开了以后她的声音变小或音乐没声，到 ☰ → 🎙️ 声音 → 对话 里关掉“外放时消除她自己的回声”。0.5.6 起可以在同一页点「🔊 外放回声测试」实测效果，并把「🩺 通话诊断」复制发给开发者。0.5.7 起测试会比较「普通媒体模式」和「通话音频模式」，自动选效果好的那种（也可以在「外放时的回声消除方式」里手动选）。用通话音频模式时，对话中音量键调的是通话音量</td>
+</tr>
+<tr>
+<td>云端声音老是断、变成手机声音</td>
+<td>0.5.5 起一次最多合成 2 句，失败自动重试，偶尔失败只影响那一句。如果还经常出现，看看百炼余额，或在 ☰ → 🎙️ 声音 里换一个音色试试</td>
+</tr>
+<tr>
+<td>早报没有按时准备</td>
+<td>电池设置改成“不受限制”（第 3 步）</td>
+</tr>
+<tr>
+<td>想看每个功能怎么用</td>
+<td>☰ → ❓ 帮助</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
