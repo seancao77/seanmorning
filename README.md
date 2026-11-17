@@ -51,4 +51,57 @@
 
 ---
 
+## Sean Morning · Personal AI Companion
+
+A voice-first, phone-first personal AI companion. The whole app runs on your phone — no computer, no server. Chats, memories, persona and API key are encrypted in a vault on the phone.
+
+### Download
+
+Recommended: download from the Releases page (with version numbers and direct download buttons):
+<https://github.com/seancao77/seanmorning/releases>
+
+| Edition | Direct download | For whom |
+|---|---|---|
+| Standard | [SeanMorning_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_android_0.7.0.apk) | Friends who want to use their own AI account |
+| Family | [SeanMorning_family_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_family_android_0.7.0.apk) | Family / friends (pre-configured) |
+
+> Users in China can also download from the gitee mirror: <https://gitee.com/magnificent-masterpiece/seanmorning/releases>
+
+### New in 0.7.0: 📚 Reading & analysis
+
+☰ → 📚 Reading & analysis: let Morning pick books (say "pick 10 books on communication"), list your own titles, or import your own e-books (EPUB / PDF / TXT / DOCX). After you confirm the list she reads in the background (by default only while charging on Wi-Fi) and writes a reading card for each book. In the library you can listen to a 3- or 15-minute version, ask about the book, or generate a shareable piece. Both Standard and Family editions include it.
+
+### The two editions
+
+- **Standard**: install, choose your own AI service, and enter your own API key.
+- **Family**: model, voice, weather, news and the brief are pre-configured; on first launch, paste the API key the sharer gives you.
+
+### Install
+
+1. Get the APK onto your phone (WeChat "File Transfer", USB cable, or a cloud drive).
+2. Open the APK and allow "install unknown apps" when asked.
+3. Open the app and follow the install guide.
+
+See the install guide: an HTML version (opens right in the phone browser) and a Markdown version are attached to the release — HTML is recommended.
+
+### Requirements
+
+- Android 8.0+
+- 64-bit (arm64) phone
+
+### You'll need
+
+- An **Alibaba Bailian (DashScope)** account: one API key covers chat, speech recognition, natural cloud voices and web search. New accounts include free quota.
+
+### Privacy & security
+
+- Everything runs on the phone; your data never leaves the device.
+- Chats, memories, persona and API key are stored in an encrypted vault (AES-256-GCM), protected by the phone's hardware (Android Keystore).
+
+### Upgrading
+
+New versions are released on the Releases page. Install the latest APK over the old one — all data is kept. **Do not uninstall first** (uninstalling deletes the vault).
+
+---
+
 © 2026 Sean Morning
