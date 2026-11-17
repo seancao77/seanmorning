@@ -9,10 +9,14 @@
 
 | 版本 | 直接下载 | 适合谁 |
 |---|---|---|
-| 普通版 | [SeanMorning_android_0.6.8.apk](https://github.com/seancao77/seanmorning/releases/download/v0.6.8/SeanMorning_android_0.6.8.apk) | 想用自己的 AI 账号的朋友 |
-| 家庭版 | [SeanMorning_family_android_0.6.8.apk](https://github.com/seancao77/seanmorning/releases/download/v0.6.8/SeanMorning_family_android_0.6.8.apk) | 家人 / 亲友（已预配好） |
+| 普通版 | [SeanMorning_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_android_0.7.0.apk) | 想用自己的 AI 账号的朋友 |
+| 家庭版 | [SeanMorning_family_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_family_android_0.7.0.apk) | 家人 / 亲友（已预配好） |
 
 > 国内用户也可以到 gitee 镜像仓库下载：<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
+
+## 0.7.0 新增：📚 阅读与分析
+
+☰ → 📚 阅读与分析：让 Morning 帮你挑书（比如说「帮我挑 10 本关于沟通的书」）、自己列书名，或导入自己的电子书（EPUB / PDF / TXT / DOCX）。确认书单后她在后台读（默认只在充电 + Wi-Fi 时），每本生成读书卡；书房里可以听 3 分钟 / 15 分钟讲书、问这本书、生成分享稿。普通版和家庭版都有。
 
 ## 两个版本的区别
 
