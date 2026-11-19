@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sean Morning Install Guide v0.7.1</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+       max-width: 720px; margin: 0 auto; padding: 18px; line-height: 1.7; color: #2b2b2b; }
+h1 { font-size: 1.7em; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+h2 { font-size: 1.35em; margin-top: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #f5f5f5; }
+code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+blockquote { border-left: 4px solid #ddd; margin: 12px 0; padding: 4px 12px; color: #666; background: #fafafa; }
+a { color: #c98aab; }
+hr { border: none; border-top: 1px solid #eee; margin: 1.4em 0; }
+li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<h1>Sean Morning — Install Guide</h1>
+<blockquote>
+<p>Version <strong>v0.7.1</strong> · updated 2026-11-19
+For Android 8.0+ and 64-bit (arm64) phones. Tested on: Samsung S25 Ultra (China, Android 16).
+This guide is updated with every release; in-app help is under ☰ → ❓ Help.</p>
+</blockquote>
+<p>Sean Morning is your own personal AI companion, <strong>running entirely on your phone</strong>:</p>
+<ul>
+<li>No computer, no server needed;</li>
+<li>Your data (chats, memories, persona, API key) lives in an encrypted vault on the phone.</li>
+</ul>
+<hr />
+<h2>📚 Reading &amp; analysis (new in 0.7.1)</h2>
+<ul>
+<li>☰ → 📚 <strong>Reading &amp; analysis</strong>: let Morning pick books, list your own titles, or import your own e-books (EPUB / PDF / TXT / DOCX, up to 30 MB). After you confirm the list she reads in the background and writes a reading card for each book (also in 📄 Files). In the library you can ▶ listen to a 3-minute or 15-minute version, ask about the book, or generate a shareable piece.</li>
+<li><strong>Background reading</strong> runs only while <strong>charging on Wi-Fi</strong> by default. For reliable background running, set Settings → Battery → Sean Morning to "<strong>Unrestricted</strong>" (same as the brief).</li>
+<li>It uses your own AI service and tokens: the page shows the estimated tokens, each plan has a budget and pauses when it's used up. Imported books stay in the phone's encrypted vault; only the relevant passages are sent to your chosen AI service. DRM-protected books cannot be opened.</li>
+</ul>
+<hr />
+<h2>1. What you need</h2>
+<table>
+<thead>
+<tr>
+<th>You need</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installer</td>
+<td><code>SeanMorning_android_&lt;version&gt;.apk</code> (~25 MB), plus a <code>.sha256</code> file for verification</td>
+</tr>
+<tr>
+<td>Alibaba Bailian account</td>
+<td>Used for chat, speech recognition, natural cloud voices, and web search — <strong>one API key covers all of them</strong>. New accounts include free quota; after that it's pay-as-you-go. Typical daily chatting costs a few yuan a month</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Any internet connection (Wi-Fi or mobile data)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Install the app</h2>
+<ol>
+<li>Get the APK onto your phone (WeChat "File Transfer", USB cable, or a cloud drive).</li>
+<li>Open the APK on the phone. If it says "install unknown apps", allow it for this one time (e.g. allow "My Files" or "WeChat" to install apps).</li>
+<li>Tap <strong>Install</strong>, then <strong>Open</strong>.</li>
+<li>(Optional) Verify: the value in the <code>.sha256</code> file should match <code>certutil -hashfile &lt;file&gt; SHA256</code> on a computer.</li>
+</ol>
+<p><strong>Upgrading</strong>: install the new version directly over the old one — chats, persona, and API key are kept. This requires the same signing key, which all official releases use.</p>
+<p><strong>Do not uninstall first</strong>: uninstalling also deletes the phone's vault.</p>
+<hr />
+<h2>3. First launch</h2>
+<ol>
+<li>The first time you tap <strong>Voice</strong> or <strong>Talk</strong>, it asks for the <strong>microphone</strong> permission — allow it.</li>
+<li>The first time you use <strong>Talk</strong> mode, it asks for <strong>notifications</strong> — allow it. The call can continue after the screen locks thanks to that notification.</li>
+<li>For the daily brief to be prepared on time: phone Settings → Apps → Sean Morning → Battery → <strong>Unrestricted</strong>.</li>
+</ol>
+<hr />
+<h2>4. Add your Alibaba Bailian API key (required)</h2>
+<ol>
+<li><strong>On the phone</strong>, open <a href="https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key">https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key</a>, sign in with Alipay or an Alibaba Cloud account, and enable Bailian as prompted.</li>
+<li>Tap <strong>Create API Key</strong> and copy it immediately. <strong>The key is shown only once</strong>, so create and copy it on the phone (no need to go through a computer).</li>
+<li>Back in Sean Morning, open ☰ → 🧠 <strong>AI models</strong>.</li>
+<li>In the <strong>Fast replies (talk layer)</strong> block:
+   - Provider: <strong>Alibaba Bailian</strong>;
+   - Model: <code>qwen3.7-plus</code> (smarter) or <code>qwen3.8-flash</code> (faster, cheaper);
+   - Extra parameters: <code>{"enable_thinking":false}</code>;
+   - Paste the key into the API key field, tap <strong>Save</strong>, then <strong>Test</strong>. A ✓ and first-word latency mean it works.</li>
+<li>Do the same in <strong>Complex tasks (work layer)</strong>: model <code>qwen3.7-plus</code> (or <code>qwen3.8-max</code>). The key is already stored — no need to re-enter it.</li>
+<li>When the balance runs out she tells you "balance insufficient" — top up in the Bailian console.</li>
+</ol>
+<p>The key is stored only in the phone's encrypted vault; it's never shown on the page or sent anywhere else.</p>
+<hr />
+<h2>5. Voice, personality and background</h2>
+<ul>
+<li>☰ → 🎙️ <strong>Voice</strong>: engine <strong>Cloud · Alibaba Bailian CosyVoice</strong>, pick a voice you like, e.g. <strong>龙应桃 Longyingtao (gentle &amp; calm)</strong> or <strong>龙悦 Longyue (warm)</strong>. You can set a monthly cap (default ¥20) and get a reminder at 80%. "Her volume" defaults to 90%. Choose "The phone's own (free)" if you don't want to spend.</li>
+<li>☰ → 🎭 <strong>Personality</strong>: name her, choose the conversation mode, tune the style sliders, and pick <strong>Language</strong> — switch it to <strong>English</strong> here to turn the whole app English. Set her voice, then write or paste the personality profile; tap "Fill in the Morning V1.0 template" and adjust to taste. <strong>Keep a copy of the profile text</strong> so you can paste it back after switching phones.</li>
+<li>☰ → 🎨 <strong>Background</strong>: pick a colour and shape, or tap "＋ Add photo/video" under "Your own backgrounds" to choose a photo or an MP4 video (up to 120 MB). Everything you add is saved; tap to switch, tap "Default" to go back, and only Delete removes it. Videos loop muted, and brightness is adjustable.</li>
+<li>☰ → 🎨 <strong>Digital persona</strong> (0.6.2): under "Your own backgrounds", tap <strong>Morning Modern</strong> or <strong>Morning Oriental</strong>. She swaps to the matching video when idle, listening, and speaking; it loops muted and your choice persists. These are test videos that follow her state — not real-time lip sync.</li>
+</ul>
+<hr />
+<h2>6. Connections &amp; brief</h2>
+<p>Open ☰ → 🔗 <strong>Connections &amp; brief</strong>. The <strong>Morning brief</strong> is at the top; each connection is one row below. Tap a row to open its settings, and tap the pill on the right to switch it on or off. Changes save by themselves, or tap <strong>Save</strong> at the top.</p>
+<table>
+<thead>
+<tr>
+<th>Connection</th>
+<th>How to set it up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌅 Morning brief</td>
+<td>Set a prepare time (default 06:45); you can add a few watch topics. Say "brief" to have it read aloud</td>
+</tr>
+<tr>
+<td>☀️ Weather</td>
+<td>Just enter the city name, e.g. <code>Hangzhou</code>; the coordinates are looked up when you save</td>
+</tr>
+<tr>
+<td>📰 News</td>
+<td>Tap recommended sources to add them in one tap (China News, IT Home, etc.); each source shows ✓ or ✗</td>
+</tr>
+<tr>
+<td>📅 Phone calendar</td>
+<td>Tap "Set up" to allow calendar access (also needed for adding events). Reads the phone calendar directly — no sign-up. Say "training class tomorrow 8am to 5pm, add to calendar" and a confirmation card appears; tap <strong>Confirm</strong> to add. Say "change to 8 to 5" or "delete this event" right after. For Outlook events: Samsung Calendar → Settings → Manage calendars → Add account → add your Outlook account</td>
+</tr>
+<tr>
+<td>⏰ Alarms &amp; reminders</td>
+<td>On by default, no permission needed — uses the phone's Clock app. Say "wake me at 6:30 tomorrow", "remind me in 10 minutes to turn off the stove"; right after, say "change to 7:30", "postpone 30 minutes", "cancel the alarm". Reminders more than a day away go into the phone calendar</td>
+</tr>
+<tr>
+<td>🎵 Music</td>
+<td>Tap "Allow" so she can play your phone's songs; allow notification access so she can try to control QQ Music directly. Songs downloaded in QQ Music are encrypted and can only play inside QQ Music</td>
+</tr>
+<tr>
+<td>🔎 Web search</td>
+<td>Uses the Bailian key above; turn it on and say "look up …"</td>
+</tr>
+<tr>
+<td>📧 Outlook calendar &amp; mail</td>
+<td>Optional; needs a free Microsoft app ID (Client ID) — a 36-character code with dashes, <strong>not your mailbox</strong>. The card has step-by-step instructions; details in <a href="OUTLOOK.md">OUTLOOK.md</a>. Personal accounts must register a free Azure account first (since 2024) before registering an app. Then tap "Sign in to Outlook" and follow the code on the page (to just see Outlook events, the "Phone calendar" above is simpler)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Share to Sean</strong>: in WeChat, Toutiao, the browser, or your gallery, tap <strong>Share</strong> → <strong>Send to Sean Morning</strong>, and articles, links, and images go to her — one tap and she can summarise or fact-check them. The first time you may need to find Sean Morning under "More" in the share menu.</p>
+<hr />
+<h2>7. Switching phones &amp; backup</h2>
+<ul>
+<li>There's <strong>no one-tap vault export yet</strong> (planned). When switching phones, install the app on the new phone and redo steps 4–6. Paste the profile text you saved earlier.</li>
+<li>The vault key is protected by the phone's hardware (Android Keystore) and can't be copied to another phone, so the old phone's data can't be moved directly. This is by design, for security.</li>
+</ul>
+<hr />
+<h2>8. Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"No microphone permission"</td>
+<td>Tap the button in the prompt to open permissions, or phone Settings → Apps → Sean Morning → Permissions → Microphone</td>
+</tr>
+<tr>
+<td>Dictation does nothing / "balance insufficient"</td>
+<td>Top up in the Bailian console; if it says "key needed", go back to step 4</td>
+</tr>
+<tr>
+<td>Music only opens QQ Music, or no sound</td>
+<td>QQ Music doesn't let other apps control it. She'll switch to your phone's songs or radio; you can also allow notification access under Connections &amp; brief → Music</td>
+</tr>
+<tr>
+<td>Playback bar appears on its own / won't close</td>
+<td>Tap ✕ (since 0.4.5 it always closes, and closed songs don't pop back). If you don't want the music feature, turn "Music" off in Connections &amp; brief</td>
+</tr>
+<tr>
+<td>Music silent / her voice too quiet</td>
+<td>Press the side volume-up key: in the app that's the media volume, which changes her voice and music together. You can also set "Her volume" under ☰ → 🎙️ Voice (default 90%)</td>
+</tr>
+<tr>
+<td>Words get cut off, or she answers slowly</td>
+<td>Since 0.5.2 Voice starts recording immediately and waits for the last words; in Talk mode she answers 0.7 s after the sentence ends, longer mid-sentence. Adjust "How soon she answers" under ☰ → 🎙️ Voice → Talk</td>
+</tr>
+<tr>
+<td>In Talk mode she takes her own words for yours</td>
+<td>Since 0.5.4 she removes her own echo on the loudspeaker; just start talking to cut her off. If her voice gets quiet or music goes silent, turn off "Remove her own echo on the loudspeaker" under ☰ → 🎙️ Voice → Talk. Since 0.5.6 you can run "🔊 Loudspeaker echo test" on the same page, and copy "🩺 Call diagnostics" to the developer. Since 0.5.7 the test compares "Normal media mode" and "Call audio mode" and auto-picks the better one (or pick manually under "Echo cancelling on the loudspeaker"). In call audio mode the volume keys control the call volume</td>
+</tr>
+<tr>
+<td>Cloud voice keeps dropping to the phone voice</td>
+<td>Since 0.5.5 up to 2 sentences are synthesised at once and retried on failure; occasional failures only affect that sentence. If it still happens often, check the Bailian balance or try another voice under ☰ → 🎙️ Voice</td>
+</tr>
+<tr>
+<td>Daily brief not ready on time</td>
+<td>Set battery to "Unrestricted" (step 3)</td>
+</tr>
+<tr>
+<td>How to use each feature</td>
+<td>☰ → ❓ Help</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
