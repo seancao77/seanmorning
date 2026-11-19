@@ -9,12 +9,12 @@
 
 | 版本 | 直接下载 | 适合谁 |
 |---|---|---|
-| 普通版 | [SeanMorning_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_android_0.7.0.apk) | 想用自己的 AI 账号的朋友 |
-| 家庭版 | [SeanMorning_family_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_family_android_0.7.0.apk) | 家人 / 亲友（已预配好） |
+| 普通版 | [SeanMorning_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_android_0.7.1.apk) | 想用自己的 AI 账号的朋友 |
+| 家庭版 | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | 家人 / 亲友（已预配好） |
 
 > 国内用户也可以到 gitee 镜像仓库下载：<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
-## 0.7.0 新增：📚 阅读与分析
+## 0.7.1 新增：📚 阅读与分析
 
 ☰ → 📚 阅读与分析：让 Morning 帮你挑书（比如说「帮我挑 10 本关于沟通的书」）、自己列书名，或导入自己的电子书（EPUB / PDF / TXT / DOCX）。确认书单后她在后台读（默认只在充电 + Wi-Fi 时），每本生成读书卡；书房里可以听 3 分钟 / 15 分钟讲书、问这本书、生成分享稿。普通版和家庭版都有。
 
@@ -62,12 +62,12 @@ Recommended: download from the Releases page (with version numbers and direct do
 
 | Edition | Direct download | For whom |
 |---|---|---|
-| Standard | [SeanMorning_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_android_0.7.0.apk) | Friends who want to use their own AI account |
-| Family | [SeanMorning_family_android_0.7.0.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.0/SeanMorning_family_android_0.7.0.apk) | Family / friends (pre-configured) |
+| Standard | [SeanMorning_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_android_0.7.1.apk) | Friends who want to use their own AI account |
+| Family | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | Family / friends (pre-configured) |
 
 > Users in China can also download from the gitee mirror: <https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
-### New in 0.7.0: 📚 Reading & analysis
+### New in 0.7.1: 📚 Reading & analysis
 
 ☰ → 📚 Reading & analysis: let Morning pick books (say "pick 10 books on communication"), list your own titles, or import your own e-books (EPUB / PDF / TXT / DOCX). After you confirm the list she reads in the background (by default only while charging on Wi-Fi) and writes a reading card for each book. In the library you can listen to a 3- or 15-minute version, ask about the book, or generate a shareable piece. Both Standard and Family editions include it.
 
