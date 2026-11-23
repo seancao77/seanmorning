@@ -9,14 +9,18 @@
 
 | 版本 | 直接下载 | 适合谁 |
 |---|---|---|
-| 普通版 | [SeanMorning_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_android_0.7.1.apk) | 想用自己的 AI 账号的朋友 |
+| 普通版 | [SeanMorning_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_android_0.7.3.apk) | 想用自己的 AI 账号的朋友 |
 | 家庭版 | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | 家人 / 亲友（已预配好） |
 
 > 国内用户也可以到 gitee 镜像仓库下载：<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
-## 0.7.1 新增：📚 阅读与分析
+## 0.7.3 新增：🌐 读书分享 → 发布到自己的网站
 
-☰ → 📚 阅读与分析：让 Morning 帮你挑书（比如说「帮我挑 10 本关于沟通的书」）、自己列书名，或导入自己的电子书（EPUB / PDF / TXT / DOCX）。确认书单后她在后台读（默认只在充电 + Wi-Fi 时），每本生成读书卡；书房里可以听 3 分钟 / 15 分钟讲书、问这本书、生成分享稿。普通版和家庭版都有。
+☰ → 📚 阅读与分析：让 Morning 帮你挑书（比如说「帮我挑 10 本关于沟通的书」）、自己列书名，或导入自己的电子书（EPUB / PDF / TXT / DOCX）。确认书单后她在后台读（默认只在充电 + Wi-Fi 时），每本生成读书卡；书房里可以听 3 分钟 / 15 分钟讲书、问这本书、生成分享稿。
+
+**0.7.2 新增「🌐 分享包」**（默认关闭）：把读完的书做成分享包——读书卡公开部分 + 讲书音频，🔒 私人内容、导入原文、联系方式都会去掉，页面标明由 AI 整理朗读；可导出成手机上的 HTML 文件。
+
+**0.7.3 新增「🌐 发布到自己的网站」**：用一键安装脚本 `seanmorning_site_<版本>.sh` 在云服务器上搭好分享网站（nginx + 只用 Python 标准库的小服务，静态网页 / JSON / RSS），备案通过、开了 HTTPS 后，在手机里填 https 地址 + 发布令牌，点两下确认即发布，随时可更新或撤回。普通版和家庭版都有。
 
 ## 两个版本的区别
 
@@ -62,14 +66,18 @@ Recommended: download from the Releases page (with version numbers and direct do
 
 | Edition | Direct download | For whom |
 |---|---|---|
-| Standard | [SeanMorning_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_android_0.7.1.apk) | Friends who want to use their own AI account |
+| Standard | [SeanMorning_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_android_0.7.3.apk) | Friends who want to use their own AI account |
 | Family | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | Family / friends (pre-configured) |
 
 > Users in China can also download from the gitee mirror: <https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
-### New in 0.7.1: 📚 Reading & analysis
+### New in 0.7.3: 🌐 Reading share → publish to your own site
 
-☰ → 📚 Reading & analysis: let Morning pick books (say "pick 10 books on communication"), list your own titles, or import your own e-books (EPUB / PDF / TXT / DOCX). After you confirm the list she reads in the background (by default only while charging on Wi-Fi) and writes a reading card for each book. In the library you can listen to a 3- or 15-minute version, ask about the book, or generate a shareable piece. Both Standard and Family editions include it.
+☰ → 📚 Reading & analysis: let Morning pick books (say "pick 10 books on communication"), list your own titles, or import your own e-books (EPUB / PDF / TXT / DOCX). After you confirm the list she reads in the background (by default only while charging on Wi-Fi) and writes a reading card for each book. In the library you can listen to a 3- or 15-minute version, ask about the book, or generate a shareable piece.
+
+**New in 0.7.2 — "🌐 share package"** (off by default): turn a finished book into a share package — the public part of the reading card plus the narration audio; 🔒 private content, imported source text and contact details are stripped, and the page is marked as AI-read. You can export it as an HTML file on the phone.
+
+**New in 0.7.3 — "🌐 publish to your own site"**: use the one-file installer `seanmorning_site_<version>.sh` to set up a share site on your cloud server (nginx + a Python-stdlib-only service; static pages / JSON / RSS). After your ICP filing passes and HTTPS is on, enter the https address + publish token in the phone, confirm twice, and it is published — update or withdraw any time. Both Standard and Family editions include it.
 
 ### The two editions
 
