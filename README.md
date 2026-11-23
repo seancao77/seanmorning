@@ -10,7 +10,7 @@
 | 版本 | 直接下载 | 适合谁 |
 |---|---|---|
 | 普通版 | [SeanMorning_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_android_0.7.3.apk) | 想用自己的 AI 账号的朋友 |
-| 家庭版 | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | 家人 / 亲友（已预配好） |
+| 家庭版 | [SeanMorning_family_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_family_android_0.7.3.apk) | 家人 / 亲友（已预配好） |
 
 > 国内用户也可以到 gitee 镜像仓库下载：<https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
@@ -67,7 +67,7 @@ Recommended: download from the Releases page (with version numbers and direct do
 | Edition | Direct download | For whom |
 |---|---|---|
 | Standard | [SeanMorning_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_android_0.7.3.apk) | Friends who want to use their own AI account |
-| Family | [SeanMorning_family_android_0.7.1.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.1/SeanMorning_family_android_0.7.1.apk) | Family / friends (pre-configured) |
+| Family | [SeanMorning_family_android_0.7.3.apk](https://github.com/seancao77/seanmorning/releases/download/v0.7.3/SeanMorning_family_android_0.7.3.apk) | Family / friends (pre-configured) |
 
 > Users in China can also download from the gitee mirror: <https://gitee.com/magnificent-masterpiece/seanmorning/releases>
 
